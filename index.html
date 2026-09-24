@@ -15,84 +15,32 @@
   <link rel="stylesheet" href="w3.css">
 
   <style>
-  .w3-sidebar a {font-family: "Roboto", sans-serif}
-  body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
-  </style>
+:root{--paper:#faf9f6;--ink:#292f2d;--muted:#68716c;--accent:#48675c;--line:#dedfd8}
+.w3-container:before,.w3-container:after{display:none}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:105px}body.w3-content{max-width:none!important;margin:0;background:var(--paper);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:16px;line-height:1.8;-webkit-font-smoothing:antialiased}h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:400;line-height:1.2}a{color:var(--accent);text-decoration:none;text-underline-offset:5px}a:hover{text-decoration:underline}a:focus-visible{outline:2px solid var(--accent);outline-offset:5px}.site-header{border-bottom:1px solid var(--line);background:var(--paper);position:sticky;top:0;z-index:10}.header-inner{max-width:1120px;margin:auto;min-height:80px;display:flex;align-items:center;justify-content:space-between;gap:35px;padding:16px 32px}.wordmark{font-family:Georgia,serif;font-size:22px;color:var(--ink);white-space:nowrap}.site-nav{display:flex;flex-wrap:wrap;gap:8px 24px}.site-nav a{font-size:13px;color:var(--muted)}.w3-main{max-width:1056px;margin:0 auto!important;padding:0 32px}.w3-main>.w3-container{padding:52px 0!important;background:transparent!important;border-top:1px solid var(--line)}#home{display:grid;grid-template-columns:minmax(0,1fr) 230px;gap:60px;text-align:left!important;padding:76px 0 64px!important;border:0}.hero-copy h1{font-size:60px;letter-spacing:-2px;margin:10px 0 20px}.eyebrow{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);font-weight:600;margin:0 0 12px}.hero-copy p{max-width:none!important;text-align:left!important;margin:20px 0!important}.hero-copy .bio{font-size:16px;line-height:1.85}.portrait{width:230px;max-width:100%!important;display:block;margin-top:40px;border-radius:2px;filter:saturate(.78)}.portrait-caption{font-size:12px;color:var(--muted);margin-top:16px;line-height:1.7}.recruiting{font-size:14px;color:var(--muted);padding-left:18px;border-left:2px solid #b8c5bd}.contact-links{display:flex;gap:24px;flex-wrap:wrap;font-size:11px;font-weight:600;letter-spacing:1.3px;margin-top:26px}h2{font-size:32px;letter-spacing:-.6px;margin:0 0 28px}.w3-main ul,.w3-main ol{padding-left:21px;margin:0}.w3-main li{padding-left:7px;margin:0 0 15px}.w3-main li::marker{color:#85958b}#education>li,#award>li{list-style:none;padding:0;margin-bottom:22px}#education>li{border-left:2px solid var(--line);padding-left:22px}#publications ol{list-style:none;counter-reset:papers;padding:0}#publications li{position:relative;counter-increment:papers;padding:0 0 24px 48px;margin-bottom:24px;border-bottom:1px solid var(--line);font-size:15px}#publications li:last-child{border:0;margin-bottom:0;padding-bottom:0}#publications li:before{content:counter(papers,decimal-leading-zero);position:absolute;left:0;top:0;font-size:12px;color:var(--muted)}#publications li>strong:first-child{display:inline-block;color:var(--accent);font-size:12px;letter-spacing:.5px;margin-bottom:7px}strong{font-weight:600}.site-footer{max-width:992px;margin:20px auto 0;border-top:1px solid var(--line);padding:25px 0 40px;display:flex;justify-content:space-between;color:var(--muted);font-size:12px}.skip-link{position:absolute;left:20px;top:-70px;background:var(--paper);padding:10px;z-index:20}.skip-link:focus{top:10px}
+@media(min-width:900px){.w3-main>.w3-container:not(#home){display:grid;grid-template-columns:230px minmax(0,1fr);column-gap:60px}.w3-main>.w3-container:not(#home)>h2{grid-column:1;grid-row:1 / span 20}.w3-main>.w3-container:not(#home)>:not(h2){grid-column:2}#education>p,#award>p{display:none}}
+@media(max-width:760px){.header-inner{padding:16px 24px;display:block}.wordmark{font-size:21px}.site-nav{margin-top:10px;gap:4px 18px}.site-nav a{font-size:12px}.w3-main{padding:0 24px}#home{grid-template-columns:1fr;gap:22px;padding:40px 0!important}.hero-copy h1{font-size:45px}.hero-portrait{grid-row:1;display:flex;align-items:center;gap:18px}.portrait{width:110px;margin-top:0}.portrait-caption{font-size:12px}.hero-copy p{font-size:15px}.w3-main>.w3-container{padding:36px 0!important}h2{font-size:29px}.site-footer{margin:0 24px;gap:20px}.contact-links{gap:20px}html{scroll-padding-top:140px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
 
   <link rel="icon" type="image/jpg" href="images/logoxx.jpg">
-  <!--
-  <script src="jquery.min.js"></script>
-  <script>
-  $(document).ready(function(){
-    // Add smooth scrolling to all links
-    $("a").on('click', function(event) {
-
-      // Make sure this.hash has a value before overriding default behavior
-      if (this.hash !== "") {
-        // Prevent default anchor click behavior
-        event.preventDefault();
-
-        // Store hash
-        var hash = this.hash;
-
-        // Using jQuery's animate() method to add smooth page scroll
-        // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-        $('html, body').animate({
-          scrollTop: $(hash).offset().top
-        }, 800, function(){
-
-          // Add hash (#) to URL when done scrolling (default click behavior)
-          window.location.hash = hash;
-        });
-      } // End if
-    });
-  });
-  </script>
-  //-->
+  
 
 </head>
 
 
-<body class="w3-content" style="max-width:1000px">
-
-<!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-bar-block w3-black w3-collapse w3-top w3-right" style="z-index:3;width:150px" id="mySidebar">
-  <div class="w3-container w3-display-container w3-padding-16">
-    <h3><b>XIAOFAN</b></h3>
-  </div>
-  <div class="w3-padding-64 w3-text-light-grey w3-large" style="font-weight:bold">
-    <a href="#home" class="w3-bar-item w3-button">Home</a>
-    <a href="#education" class="w3-bar-item w3-button">Employment</a>
-    <a href="#projects" class="w3-bar-item w3-button">Projects</a>
-    <a href="#publications" class="w3-bar-item w3-button">Publications</a>
-    <a href="#teaching" class="w3-bar-item w3-button">Teaching</a>
-    <a href="#supervision" class="w3-bar-item w3-button">Supervision</a>
-    <a href="#service" class="w3-bar-item w3-button">Services</a>
-    <a href="#award" class="w3-bar-item w3-button">Awards  &amp; Fellowship</a>
-  </div>
-</nav>
-
-<!-- Top menu on small screens -->
-<header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
-  <div class="w3-bar-item w3-padding-24">XIAOFAN</div>
-  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-24 w3-right"  style="font-stretch: extra-expanded;" onclick="w3_open()"><b>≡</b></a>
-  </div>
-</header>
-
-<!-- Overlay effect when opening sidebar on small screens -->
-<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-
-<!-- !PAGE CONTENT! -->
+<body class="w3-content">
+<a class="skip-link" href="#home">Skip to content</a>
+<header class="site-header"><div class="header-inner"><a class="wordmark" href="#home">Xiaofan Li<span style="color:#8b958c">.</span></a><nav class="site-nav" aria-label="Main navigation"><a href="#education">Employment</a><a href="#projects">Research</a><a href="#publications">Publications</a><a href="#teaching">Teaching</a><a href="#supervision">Supervision</a><a href="#service">Service</a><a href="#award">Awards</a></nav></div></header>
 <div class="w3-main" style="margin-left:150px">
 
-  <!-- Push down content on small screens -->
-  <div class="w3-hide-large" style="margin-top:83px"></div>
+  
+  
 
-<!-- The Home Section -->
+
     <div class="w3-container w3-center w3-padding-32" id="home">
-   <img style="max-width: 210px" alt="profile photo" src="images/XFL2.jpg">
+   <div class="hero-copy"><div class="eyebrow">Databases · Graphs · Language Models</div>
       <h1>Dr. Xiaofan Li</h1>
-        <p class="w3-justify" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;max-width:600px">
+        <p class="bio w3-justify" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;max-width:600px">
 I am an Assistant Professor at Nanjing University, China, and a DAAD AInet Fellow.
 I previously worked as a Research Fellow at Nanyang Technological University, Singapore, and as a researcher at Leibniz University Hannover and the L3S Research Center, Germany.
 I received my Ph.D. from Swinburne University of Technology, Australia, and my bachelor's degree from Wuhan University, China.
@@ -100,32 +48,26 @@ My research focuses on databases and graph databases, with a current interest in
 My work has appeared in leading database conferences, including SIGMOD and ICDE, and other major venues.
 Some of my research has been used to support a severe COVID-19 prediction system on a German national medical data analytics platform.
         </p>
-        <p class="w3-justify" style="max-width:600px;margin-left:auto;margin-right:auto">
+        <p class="recruiting w3-justify" style="max-width:600px;margin-left:auto;margin-right:auto">
 I am currently looking for motivated PhD, master's, and undergraduate students who are passionate about research. If you are interested in working with me, please feel free to get in touch by email.
         </p>
-        <p class="w3-center">
-          <a href="mailto:xfli197@gmail.com">EMAIL</a> &nbsp/&nbsp
-          <a href="https://dblp.org/pid/50/3937-4.html">DBLP</a> &nbsp/&nbsp
+        <p class="contact-links">
+          <a href="mailto:xfli197@gmail.com">EMAIL</a>
+          <a href="https://dblp.org/pid/50/3937-4.html">DBLP</a>
           <a href="https://scholar.google.com/citations?hl=zh-CN&user=TAmykHsAAAAJ">GOOGLE SCHOLAR</a>
-        </p>
+        </p></div><aside class="hero-portrait"><img class="portrait" alt="Portrait of Xiaofan Li" src="images/XFL2.jpg" width="230"><div class="portrait-caption">Assistant Professor<br>Nanjing University<br>DAAD AInet Fellow</div></aside>
   </div>
 
-<!-- The Education & Work Section -->
+
   <div class="w3-container w3-light-grey w3-padding-32" id="education">
    <h2>Employment</h2>
-    <p><li> 2025.11 - present.<br> Assistant Professor<br> Nanjing University, China</li></p>
-   <p><li> 2023.08 - 2025.11<br> Research Fellow<br> Nanyang Technological University, Singapore</li></p>
-   <p><li> 2022.09 - 2023.08<br> Senior Researcher<br> L3S Research Center, Leibniz University Hannover, Germany</li></p>
-   <!--
-    <p><li> 2018.07 - 2023.03<br> Doctoral Degree in Computer Science<br> Swinburne University of Technology, Australia</li></p>
+    <li> 2025.11 - present.<br> Assistant Professor<br> Nanjing University, China</li>
+   <li> 2023.08 - 2025.11<br> Research Fellow<br> Nanyang Technological University, Singapore</li>
+   <li> 2022.09 - 2023.08<br> Senior Researcher<br> L3S Research Center, Leibniz University Hannover, Germany</li>
    
-    <p><li> 2016.09 - 2018.04<br> Master Candidate in Theoretical Physics<br> University of Science and Technology of China, China</li></p>
-   
-    <p><li> 2012.09 - 2016.06<br> Bachelor of Engineering in Geomatics Engineering, Excellent Engineer Program<br> Wuhan University, China</li></p>
-    -->
   </div>
 
-<!-- The Projects Section -->
+
 <div class="w3-container w3-padding-32" id="projects">
   <h2>Research Projects</h2>
   <ul>
@@ -138,64 +80,47 @@ I am currently looking for motivated PhD, master's, and undergraduate students w
 </div>
 
 
-<!-- The Publications Section -->
+
   <div class="w3-container w3-light-grey w3-padding-32" id="publications">
     <h2>Selected Publications</h2>
-<!--    <h4>Conference Papers:</h4>-->
+
 
     <ol>
 
-      <p>
       <li><strong>ICDE 2025 (CORE A<sup>*</sup>, CCF A)</strong>
       <br>
             <strong>Xiaofan Li</strong>, Rui Zhou, Lu Chen, and Chengfei Liu. 2025. Clique Comparator: A Fundamental Operator for Finding a Concise Clique Summary. In <em>2025 IEEE International Conference on Data Engineering (ICDE)</em>. IEEE.
       </p>
 
-      <!--
-      <p>
-      <li><strong>ICDE 2025 (CORE A<sup>*</sup>, CCF A)</strong>
-      <br>
-            Xintong Yu, Rui Zhou, <strong>Xiaofan Li</strong>, Lu Chen, and Chengfei Liu. 2025. Finding a Summary for All Maximal Bicliques. In <em>2025 IEEE International Conference on Data Engineering (ICDE)</em>. IEEE.
-      </p>
-      -->
+      
 
-      <p>
       <li><strong>ICDE 2024 (CORE A<sup>*</sup>, CCF A)</strong>
       <br>
             <strong>Xiaofan Li</strong>, Gao Cong, and Rui Zhou. 2024. Quantum Algorithms for the Maximum K-Plex Problem. In <em>2024 IEEE International Conference on Data Engineering (ICDE)</em>. IEEE, 2435-2448.
-      </p>
+      </li>
 
-      <p>
       <li><strong>WWW 2024 (CORE A<sup>*</sup>, CCF A)</strong>
       <br>
             Wei Zhang, <strong>Xiaofan Li</strong>, and Wolfgang Nejdl. 2024. Adversarial Mask Explainer for Graph Neural Networks. In <em>2024 ACM The Web Conference (WWW)</em>. ACM, 861-869.
-      </p>
+      </li>
 
-      <p>
       <li><strong>SIGMOD 2022 (CORE A<sup>*</sup>, CCF A)</strong>
       <br>
             <strong>Xiaofan Li</strong>, Rui Zhou, Lu Chen, Chengfei Liu, Qiang He, and Yun Yang. 2022. One Set to Cover All Maximal Cliques Approximately. In <em>2022 ACM Special Interest Group on Management of Data (SIGMOD)</em>. ACM, 2006-2019.
-      </p>
+      </li>
 
-      <p>
       <li><strong>ICDE 2021 (CORE A<sup>*</sup>, CCF A)</strong>
       <br>
             <strong>Xiaofan Li</strong>, Rui Zhou, Lu Chen, Yong Zhang, Chengfei Liu, Qiang He, and Yun Yang. 2021. Finding a Summary for All Maximal Cliques. In <em>2021 IEEE International Conference on Data Engineering (ICDE)</em>. IEEE, 1344-1355.
-      </p>
+      </li>
 
-      <!--
-      <p>
-      <li><strong>ICDM 2019 (CORE A<sup>*</sup>, CCF B)</strong>
-      <br>
-            <strong>Xiaofan Li</strong>, Rui Zhou, Yujun Dai, Lu Chen, Chengfei Liu, Qiang He, and Yun Yang. 2019. Mining Maximal Clique Summary with Effective Sampling. In <em>2019 IEEE International Conference on Data Mining (ICDM)</em>. IEEE, 1198-1203.
-      </p>
-      -->
+      
 
     </ol>
   </div>
 
 
-<!-- The Teaching Section -->
+
 <div class="w3-container w3-padding-32" id="teaching">
   <h2>Teaching</h2>
   <ul>
@@ -204,7 +129,7 @@ I am currently looking for motivated PhD, master's, and undergraduate students w
   </ul>
 </div>
 
-<!-- The Supervision Section -->
+
 <div class="w3-container w3-light-grey w3-padding-32" id="supervision">
   <h2>Supervision</h2>
   <p>I currently serve as the primary supervisor for:</p>
@@ -215,7 +140,7 @@ I am currently looking for motivated PhD, master's, and undergraduate students w
   <p>I also supervise undergraduate research interns at Nanjing University.</p>
 </div>
 
-<!-- The Services Section -->
+
   <div class="w3-container w3-padding-32" id="service">
     <h2>Services</h2>
     <ul>
@@ -225,72 +150,21 @@ I am currently looking for motivated PhD, master's, and undergraduate students w
     </ul>
   </div>
 
-  <!-- The Awards Section -->
+  
   <div class="w3-container w3-light-grey w3-padding-32" id="award">
     <h2>Awards & Fellowship</h2>
-    <p><li>DAAD AInet Fellow, 2025.</li></p>
-    <p><li>Swinburne SUPRA Scholarship, 2018.</li></p>
-    <!--
-    <p><li>Excellent Student of Physics Summer School, Wuhan University, 2015, ranked 2/154 in school.</li></p>
-    <p><li>National Encouragement Scholarship, 2013 &amp; 2014.</li></p>
-    <p><li>Star of Memory Challenge, Wuhan University, 2013 &amp; 2014, ranked 6 in university.</li></p>
-    -->
+    <p><li>DAAD AInet Fellow, 2025.</li>
+    <li>Swinburne SUPRA Scholarship, 2018.</li>
+    
   </div>  
 
-  <div class="w3-light-grey w3-center w3-padding-24">
-    <!-- Default Statcounter code for Xiaofan's Homepage
-    https://phynman197.github.io -->
-                                                    
-<!--   No.
-  <script type="text/javascript">
-  var sc_project=12347113; 
-  var sc_invisible=0; 
-  var sc_security="21aca5d1"; 
-  var sc_https=1; 
-  var scJsHost = "https://";
-  document.write("<sc"+"ript type='text/javascript' src='" + scJsHost+
-  "statcounter.com/counter/counter.js'></"+"script>");
-  </script> Visitor Since Jun 2020. Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a>
-  <noscript>
-    <div class="statcounter"><a title="Web Analytics Made Easy -
-  StatCounter" href="https://statcounter.com/" target="_blank"><img
-  class="statcounter" src="https://c.statcounter.com/12347113/0/21aca5d1/0/"
-  alt="Web Analytics Made Easy - StatCounter"></a></div>
-  </noscript> -->
+  
 
-  <!-- End of Statcounter Code -->
-
-  </div>
-
-  <!-- End page content -->
+  
 </div>
 
-<script>
-// Accordion 
-function myAccFunc() {
-  var x = document.getElementById("demoAcc");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else {
-    x.className = x.className.replace(" w3-show", "");
-  }
-}
-
-// Click on the "Jeans" link on page load to open the accordion for demo purposes
-document.getElementById("myBtn").click();
 
 
-// Open and close sidebar
-function w3_open() {
-  document.getElementById("mySidebar").style.display = "block";
-  document.getElementById("myOverlay").style.display = "block";
-}
- 
-function w3_close() {
-  document.getElementById("mySidebar").style.display = "none";
-  document.getElementById("myOverlay").style.display = "none";
-}
-</script>
-
+<footer class="site-footer"><span>Xiaofan Li · Nanjing University</span><a href="#home">Back to top ↑</a></footer>
 </body>
 </html>
